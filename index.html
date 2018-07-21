@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todolist</title>
+</head>
+<body>
+    <h1>Daftar Makanan</h1>
+
+    <input id="makanan" placeholder="Masukan Nama"/>
+    <button id="button">Tambah</button>
+
+    <ol id="ol">
+        <li>SOTO AYAM</li>
+        <li>BUBUR AYAM</li>
+        <li>NASI UDUK</li>
+    </ol>
+
+    <script>
+        const inputDOM =  document.getElementById('makanan')
+        
+    
+       const buttonDOM =  document.getElementById('button')
+
+       const olDOM = document.getElementById('ol')
+
+       olDOM.innerHTML = localStorage.getItem('data')
+
+       buttonDOM.addEventListener('click', function(){
+
+           const makanan = inputDOM.value
+
+           olDOM.innerHTML = olDOM.innerHTML + "<li>" + makanan + "</li>" 
+
+           localStorage.setItem('data', olDOM.innerHTML)
+
+            
+
+       })
+
+    </script>
+</body>
+</html>
